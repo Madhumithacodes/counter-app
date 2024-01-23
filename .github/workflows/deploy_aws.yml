@@ -28,5 +28,6 @@ jobs:
       - name: Deploy to AWS Amplify
         run: |
           npm install -g @aws-amplify/cli
+          amplify pull
           amplify configure --appid d1euyo548c7mzw 
           amplify publish
