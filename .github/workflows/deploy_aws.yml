@@ -28,7 +28,7 @@ jobs:
       - name: Deploy to AWS Amplify
         run: |
           npm install -g @aws-amplify/cli
-          amplify configure --appId d1euyo548c7mzw --envName AMPLIFY_MONOREPO_APP_ROOT
+          amplify configure --appId d1euyo548c7mzw --envName Newstage
           amplify publish
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
