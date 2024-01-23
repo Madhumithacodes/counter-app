@@ -29,6 +29,12 @@ jobs:
         run: |
           npm install -g @aws-amplify/cli
           amplify configure --appid d1euyo548c7mzw --envName Newstage
+            --yes \
+            --accessKeyId $AWS_ACCESS_KEY_ID \
+            --secretAccessKey $AWS_SECRET_ACCESS_KEY
+          amplify env add Newstage \
+            --awsAccessKeyId $AWS_ACCESS_KEY_ID \
+            --awsSecretAccessKey $AWS_SECRET_ACCESS_KEY
           amplify publish
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
