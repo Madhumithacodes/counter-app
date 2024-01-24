@@ -28,8 +28,15 @@ jobs:
       - name: Deploy to AWS Amplify
         run: |
           npm install -g @aws-amplify/cli
-          amplify configure --appId d1euyo548c7mzw --envName staging --yes
-          amplify publish --yes
+          amplify configure --appid d1euyo548c7mzw --envName staging
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Publish
+        run: |
+         amplify publish
+         env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
